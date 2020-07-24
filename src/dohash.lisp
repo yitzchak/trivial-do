@@ -16,5 +16,5 @@
                                 (,next-entry)
              (unless ,more
                (return ,result-form))
-             ,@body)
+             (locally ,@body))
           (go ,repeat)))))

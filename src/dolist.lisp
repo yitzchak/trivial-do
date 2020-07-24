@@ -11,7 +11,7 @@
        (unless ,head
          (return ,result-form))
        (setq ,value-var (pop ,head))
-       ,@body
+       (locally ,@body)
        (incf ,position-var)
        (go ,repeat))))
 
