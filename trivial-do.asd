@@ -8,6 +8,8 @@
       :serial t
       :components
         ((:file "packages")
+         (:file "doalist")
          (:file "dohash")
          (:file "dolist")
+         (:file "doplist")
          (:file "doseq")))))
