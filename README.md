@@ -40,7 +40,7 @@ Iterates over the key value pairs of an plist.
 
 ## doseq
 
-Iterates over a the values of a sequence.
+Iterates over the values of a sequence.
 
 ```lisp
 (doseq (value sequence &optional return-form)
