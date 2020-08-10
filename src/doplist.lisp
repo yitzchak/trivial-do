@@ -2,6 +2,9 @@
 
 
 (defmacro doplist ((key-var value-var alist-form &optional result-form) &body body)
+  "doplist iterates over the elements of an plist and binds key-var to the key, value-var to
+the associated value and then evaluates body as a tagbody that can include declarations.
+Finally the result-form is returned after the iteration completes."
   (let ((tail (gensym))
         (repeat (gensym)))
     `(prog (,key-var
