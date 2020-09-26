@@ -34,7 +34,7 @@ Iterates over a list with a position variable tracking the current index.
 Iterates over the key value pairs of an plist.
 
 ```lisp
-(doalist (key value plist &optional return-form)
+(doplist (key value plist &optional return-form)
   (format t "key: ~A, value: ~A~%" key value))
 ```
 
