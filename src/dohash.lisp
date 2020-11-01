@@ -10,11 +10,11 @@
           (more (gensym))
           (repeat (gensym)))
       `(with-hash-table-iterator (,next-entry ,hash-table-form)
-         (prog ()
+         (prog (,more ,key-var ,value-var)
           ,repeat
-           (multiple-value-bind (,more ,key-var ,value-var)
-                                (,next-entry)
-             (unless ,more
-               (return ,result-form))
-             (locally ,@body))
-          (go ,repeat)))))
+           (multiple-value-setq (,more ,key-var ,value-var)
+                                (,next-entry))
+           (unless ,more
+             (return ,result-form))
+           (locally ,@body)
+           (go ,repeat)))))

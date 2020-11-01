@@ -9,6 +9,8 @@
             (,head ,list-form))
       ,repeat
        (unless ,head
+         (setq ,value-var nil
+               ,position-var nil)
          (return ,result-form))
        (setq ,value-var (pop ,head))
        (locally ,@body)

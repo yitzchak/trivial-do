@@ -18,6 +18,8 @@
                 (,ev-seq-form ,seq-form))
           ,repeat
            (unless (< ,position-var (length ,ev-seq-form))
+             (setq ,value-var nil
+                   ,position-var nil)
              (return ,result-form))
            (setq ,value-var (funcall ,accessor ,ev-seq-form ,position-var))
            (locally ,@body)

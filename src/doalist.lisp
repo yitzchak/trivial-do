@@ -9,6 +9,8 @@
             (,tail ,alist-form))
       ,repeat
        (unless ,tail
+         (setq ,key-var nil
+               ,value-var nil)
          (return ,result-form))
        (setq ,key-var (caar ,tail))
        (setq ,value-var (cdr (pop ,tail)))
