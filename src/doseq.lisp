@@ -1,7 +1,7 @@
 (in-package :trivial-do)
 
 
-(defmacro doseq* ((position-var value-var seq-form &optional result-form) &rest body)
+(defmacro doseq* ((position-var value-var seq-form &optional result-form) &body body)
   "doseq* iterates over the elements of an sequence and binds position-var to the index of each
 element, value-var to each element and then evaluates body as a tagbody that can include
 declarations. Finally the result-form is returned after the iteration completes."
@@ -30,7 +30,7 @@ declarations. Finally the result-form is returned after the iteration completes.
            (go ,repeat))))))
 
 
-(defmacro doseq ((var seq-form &optional result-form) &rest body)
+(defmacro doseq ((var seq-form &optional result-form) &body body)
   "doseq iterates over the elements of an sequence and binds value-var to successive values
 and then evaluates body as a tagbody that can include declarations. Finally the result-form
 is returned after the iteration completes."
